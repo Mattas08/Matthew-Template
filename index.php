@@ -5,17 +5,8 @@
  * @package Matthew_CV
  * 
  */
+get_header();
 ?>
-<html>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        Hello world
-    </body>
-    </html>
-</html>
+ <div class="content">Content</div> 
+ <?php 
+       get_footer();
