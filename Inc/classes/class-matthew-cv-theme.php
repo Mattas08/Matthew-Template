@@ -16,6 +16,7 @@ use Matthew_CV\Inc\Traits\Singleton;
     use Singleton;
     protected function __construct(){
         //Load class.
+        Menus::get_instance();
         Assets::get_instance(); 
 
         $this->setup_hooks();
@@ -37,6 +38,12 @@ use Matthew_CV\Inc\Traits\Singleton;
             'flex-width' => true, // Allow flexible width for the custom logo
         ]); 
 
+         //Enables support for custom backgrounds in the theme
+        add_theme_support('custom-background',[
+    'default-color' => 'ffffff', // Set the default background color (optional)
+    'default-image' => '', // Set the default background image (optional)   
+        ]
+        );
 
         add_theme_support('post-thumbnails'); //Enables support for featured images in posts and pages
     }

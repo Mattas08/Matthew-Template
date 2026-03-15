@@ -23,20 +23,5 @@ function matthew_cv_get_theme_instance(){
 
 matthew_cv_get_theme_instance();
 
-function Matthew_CV_enqueue_scripts() {
-
-
-
-
-
-   
-    
-    //Enqueue styles
-    wp_enqueue_script('main-js');
-    wp_enqueue_script('boostrap-js');
-    }
-
-
-add_action('wp_enqueue_scripts' , 'Matthew_CV_enqueue_scripts');
 ?>
 
