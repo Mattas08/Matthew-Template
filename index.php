@@ -37,7 +37,6 @@ get_header();
             get_template_part( 'template-parts/header/content-none' ); // If no content, include the "No posts found" template.
         
         endif; // End if have_posts() 
-            get_template_part( 'template-parts/header/content-none' ); // If no content, include the "No posts found" template.
 
 ?>
     </main>

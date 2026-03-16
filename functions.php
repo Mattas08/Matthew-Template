@@ -15,7 +15,8 @@ if (! defined('MATTHEW_CV_DIR_URI')){
 }
 
 
-require_once MATTHEW_CV_DIR_PATH . '/inc/helpers/autoloader.php';
+require_once MATTHEW_CV_DIR_PATH . '/inc/helpers/autoloader.php'; // Autoloader for classes
+require_once MATTHEW_CV_DIR_PATH . '/inc/helpers/template-tags.php'; // Custom template tags for the theme
 
 function matthew_cv_get_theme_instance(){
     \Matthew_CV\Inc\MATTHEW_CV_THEME::get_instance();

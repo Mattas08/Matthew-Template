@@ -17,7 +17,8 @@ use Matthew_CV\Inc\Traits\Singleton;
     protected function __construct(){
         //Load class.
         Menus::get_instance();
-        Assets::get_instance(); 
+        Assets::get_instance();
+        Meta_Boxes::get_instance();
 
         $this->setup_hooks();
  }
@@ -44,9 +45,22 @@ use Matthew_CV\Inc\Traits\Singleton;
     'default-image' => '', // Set the default background image (optional)   
         ]
         );
+        add_theme_support('customize-selective-refresh-widgets'); // Enables support for selective refresh in the Customizer for widgets
+        add_theme_support('post-thumbnails');
+        add_image_size('featured-thumbnail', 322, 322, true); // width, height, crop 
+        add_theme_support('feed-links'); // Enables support for automatic feed links in the head section of the theme
+        add_theme_support('html5', [ // Enables support for HTML5 markup for various elements in the theme
+            'search-form',
+            'comment-form',
+            'comment-list',
+            'gallery',
+            'caption',
+        ]);
+        add_editor_style(); // Enqueue the editor stylesheet for the WordPress block editor (Gutenberg)
+        add_theme_support('wp-block-styles'); // Enables support for default block styles provided by WordPress
+        add_theme_support('align-wide'); // Enables support for wide and full alignment options in the block editor
 
-        add_theme_support('post-thumbnails'); //Enables support for featured images in posts and pages
     }
  }
-
+ 
 ?> 

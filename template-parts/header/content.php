@@ -5,5 +5,6 @@
  * @package Matthew_CV
  */
 ?>
- <h3><?php the_title(); ?></h3>
-<div><?php the_excerpt(); ?></div>
+<a href="<?php the_permalink(); ?>">
+    <?php the_custom_post_thumbnail(get_the_ID(), 'featured-large'); ?>
+</a >
