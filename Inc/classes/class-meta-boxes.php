@@ -87,9 +87,10 @@ class Meta_Boxes {
         if ( ! isset($_POST['matthew_hide_title_field_nonce']) || 
                 ! wp_verify_nonce($_POST['matthew_hide_title_field_nonce'], plugin_basename( __FILE__ )) ) {
             return;
+        }
 
         $value = sanitize_text_field($_POST['matthew_hide_title_field']); // Sanitize the input to ensure it's safe to save in the database
 
         update_post_meta($post_id, '_hide_page_title', $value);
-    }
-} 
+        }
+    } 
