@@ -25,7 +25,9 @@ get_header();
                 <?php while ( have_posts() ) : the_post(); ?>
                     <!-- Each post is its own column -->
                     <div class="col-lg-4 col-md-6 col-sm-12">
+                        <?php get_template_part( 'template-parts/componets/blogs/entry-header' ); ?>
                         <?php get_template_part( 'template-parts/header/content' ); ?> 
+                        <?php get_template_part( 'template-parts/componets/blogs/entry-meta' ); ?>
                     </div>
                 <?php endwhile; ?>
 
@@ -35,7 +37,7 @@ get_header();
         <?php 
         else :
             get_template_part( 'template-parts/header/content-none' ); // If no content, include the "No posts found" template.
-        
+            get_template_part( 'template-parts/componets/blogs/entry-header' ); // Include the entry header template part for the "No posts found" message.
         endif; // End if have_posts() 
 
 ?>
