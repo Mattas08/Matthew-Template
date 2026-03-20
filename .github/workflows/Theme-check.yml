@@ -1,0 +1,32 @@
+name: Theme Check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.1
+
+      - name: Validate PHP syntax
+        run: find . -type f -name "*.php" -exec php -l {} \;
+
+      - name: Check for common mistakes
+        run: |
+          echo "Checking for debug functions..."
+          ! grep -r "var_dump(" . || (echo "Remove var_dump!" && exit 1)
+          ! grep -r "die(" . || (echo "Remove die()!" && exit 1)
+
+      - name: Ensure required files exist
+        run: |
+          test -f style.css || (echo "Missing style.css" && exit 1)
+          test -f functions.php || (echo "Missing functions.php" && exit 1)

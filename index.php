@@ -27,10 +27,9 @@ get_header();
                 while ( have_posts() ) : the_post(); ?>
                     <!-- Each post is its own column -->
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                        <?php get_template_part( 'template-parts/componets/blogs/entry-header' ); ?>
+                        
                         <?php get_template_part( 'template-parts/header/content' ); ?> 
-                        <?php get_template_part( 'template-parts/componets/blogs/entry-meta' ); ?>
-                        <?php get_template_part( 'template-parts/componets/blogs/entry-content' ); ?>
+                        
                     </div>
                 <?php endwhile; ?>
 
