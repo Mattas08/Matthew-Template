@@ -78,3 +78,34 @@ function matthew_cv_posted_on() {
 
     echo '<span class="posted-on text-secondary">' . $posted_on . '</span>';
 }
+
+function matthew_cv_posted_by() {
+    $byline = sprintf(
+        esc_html_x('by %s', 'post author', 'Matthew-CV'),
+        '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
+    );
+
+    echo '<span class="byline text-secondary"> ' . $byline . '</span>';
+}
+
+function matthew_cv_excerpt( $trim_character_count = 0 ){
+    if (! has_excerpt() || 0 === $trim_character_count ) {
+        the_excerpt();
+        return;
+    }
+    $excerpt = wp_strip_all_tags(get_the_excerpt());
+    $excerpt = mb_substr($excerpt, 0, $trim_character_count);
+    $excerpt = mb_substr($excerpt, 0, strpos($excerpt, ' ')); // Ensure we don't cut off in the middle of a word.
+    echo $excerpt . '...';
+}
+
+function matthew_cv_excerpt_more( $more = '' ) {
+    if ( ! is_single() ) {
+       $more = sprintf('<button class = "btn btn-info"><a class = "matthew-cv-read-more text-white" href="%1$s">%2$s</a></button>',
+            get_permalink( get_the_ID() ),
+            __('Continue reading', 'Matthew-CV')
+        );
+    }
+
+    return $more;
+}

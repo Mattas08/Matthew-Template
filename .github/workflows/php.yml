@@ -19,3 +19,46 @@ jobs:
 
       - name: Lint PHP files
         run: find . -type f -name "*.php" -exec php -l {} \;
+
+
+name: WordPress Coding Standards
+
+on: [push]
+
+jobs:
+  phpcs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.1
+          tools: composer
+
+      - name: Install PHPCS + WPCS
+        run: |
+          composer global require "squizlabs/php_codesniffer=*"
+          composer global require "wp-coding-standards/wpcs"
+
+      - name: Run PHPCS
+        run: ~/.composer/vendor/bin/phpcs --standard=WordPress .
+
+
+name: Theme Check
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate PHP files
+        run: |
+          echo "Checking for fatal errors..."
+          find . -name "*.php" -exec php -l {} \;

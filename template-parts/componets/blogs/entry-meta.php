@@ -10,5 +10,7 @@
     <?php
     // Display the post date and time using the matthew_cv_posted_on() function defined in template-tags.php
     matthew_cv_posted_on();
+    // Display the post author using the matthew_cv_posted_by() function defined in template-tags.php
+    matthew_cv_posted_by();
     ?>
 </div>

@@ -19,3 +19,13 @@
     max-width: 100%;
     height: auto;
  }
+
+ /* Entry meta styles */
+   .updated:not(.published){
+      display: none;
+   }
+
+   /* navbar styles */
+   .nav-item:hover .dropdown-menu:not(.show)  {
+      display: block;
+   }
