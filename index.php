@@ -42,6 +42,8 @@ get_header();
             get_template_part( 'template-parts/componets/blogs/entry-header' ); // Include the entry header template part for the "No posts found" message.
         endif; // End if have_posts() 
 
+        matthew_cv_pagination(); // Custom pagination function to navigate between pages of posts.
+
 ?>
     </main>
 </div>

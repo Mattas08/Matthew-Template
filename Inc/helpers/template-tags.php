@@ -109,3 +109,21 @@ function matthew_cv_excerpt_more( $more = '' ) {
 
     return $more;
 }
+
+function matthew_cv_pagination() {
+$allowed_tags = [
+    'span' => [
+        'class' => [],
+    ],
+    'a' => [
+        'class' => [],
+        'href' => [],
+    ],
+];
+$args = [
+    'before_page_number' => '<span class="btn border border-secondary mr-2 mb-2">',
+    'after_page_number' => '</span>',
+];
+    printf('<nav class = "matthew-cv-pagination clearfix " role="navigation">%s</nav>', wp_kses_post( paginate_links($args), $allowed_tags )
+    );
+}
