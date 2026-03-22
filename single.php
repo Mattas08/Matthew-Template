@@ -33,6 +33,8 @@ get_header();
                         ?>
 
                     <?php endif; ?>
+                    <div class="prev-link"><?php previous_posts_link( 'Previous posts' ); ?></div>
+            <div class="next-link"><?php next_posts_link( 'Next posts' ); ?></div>
 
                 </div>
 
@@ -42,12 +44,6 @@ get_header();
 
             </div>
         </div>
-
-        <div class="container">
-            <?php
-            previous_posts_link( 'Previous posts' );
-            next_posts_link( 'Next posts' );
-            ?>
         </div>
 
     </main>

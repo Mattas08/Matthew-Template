@@ -1,0 +1,20 @@
+{
+  "name": "matthew_cv",
+  "version": "1.0.0",
+  "description": "Matthew cv theme for wordpress",
+  "main": "main.js",
+  "scripts": {
+     "prod": "cross-env NODE_ENV=production webpack --mode production --progress",
+     "dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
+     "clean": "rm -rf build"
+  },
+  "keywords": [ ],
+  "author": "Matthew",
+  "license": "ISC",
+  "private": true,
+  "type": "commonjs",
+  "browserslist" : [
+    "defaults"
+  ]
+}
+ 
