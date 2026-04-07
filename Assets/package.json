@@ -4,17 +4,31 @@
   "description": "Matthew cv theme for wordpress",
   "main": "main.js",
   "scripts": {
-     "prod": "cross-env NODE_ENV=production webpack --mode production --progress",
-     "dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
-     "clean": "rm -rf build"
+    "prod": "cross-env NODE_ENV=production webpack --mode production --progress",
+    "dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
+    "clean": "rm -rf build"
   },
-  "keywords": [ ],
+  "keywords": [],
   "author": "Matthew",
   "license": "ISC",
   "private": true,
   "type": "commonjs",
-  "browserslist" : [
+  "browserslist": [
     "defaults"
-  ]
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.2",
+    "babel-loader": "^10.1.1",
+    "clean-webpack-plugin": "^4.0.0",
+    "cross-env": "^10.1.0",
+    "css-loader": "^7.1.4",
+    "css-minimizer-webpack-plugin": "^8.0.0",
+    "mini-css-extract-plugin": "^2.10.2",
+    "sass": "^1.99.0",
+    "sass-loader": "^16.0.7",
+    "terser-webpack-plugin": "^5.4.0",
+    "webpack": "^5.105.4",
+    "webpack-cli": "^7.0.2"
+  }
 }
- 

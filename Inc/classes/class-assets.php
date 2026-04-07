@@ -59,9 +59,9 @@ class Assets {
         // Main theme JS
         wp_register_script(
             'main-js',
-            MATTHEW_CV_DIR_URI . '/Assets/main.js',
+            MATTHEW_CV_BUILD_JS_URI . '/main.js',
             [],
-            filemtime(MATTHEW_CV_DIR_PATH . '/Assets/main.js'),
+            filemtime(MATTHEW_CV_BUILD_JS_DIR_PATH . '/main.js'),
             true
         );
 // Enqueue the registered scripts
